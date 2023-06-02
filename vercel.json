@@ -1,8 +1,10 @@
-{
-  "rewrites": [
-    { "source": "/proxy/:match/:url*", "destination": "https://:match/:url*" },
-    { "source": "/proxy/:match/:url*/", "destination": "https://:match/:url*/" },
-    { "source": "/httpproxy/:match/:url*", "destination": "http://:match/:url*" },
-    { "source": "/httpproxy/:match/:url*/", "destination": "http://:match/:url*/" }
-  ]
-}
+addEventListener(
+  "fetch",event => {
+     let url=new URL(event.request.url);
+     url.hostname="www.qian.blue";  //你需要反代的域名
+     let request=new Request(url,event.request);
+     event. respondWith(
+       fetch(request)
+     )
+  }
+)
