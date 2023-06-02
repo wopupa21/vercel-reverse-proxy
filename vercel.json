@@ -1,6 +1,6 @@
 {
-    "version": 2,
-    "routes": [
-      { "src": "/", "status": 308, "headers": { "Location": "https://buying999.sharepoint.com/" } }
-    ]
+  "version": 2,
+  "routes": [
+      {"src": "/(.*)","dest": "https://buying999.sharepoint.com"}
+  ]
 }
