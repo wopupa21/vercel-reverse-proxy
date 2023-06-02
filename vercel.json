@@ -1,6 +1,8 @@
 {
-  "version": 2,
-  "routes": [
-      {"src": "/(.*)","dest": "https://tiktok.com"}
+  "rewrites": [
+    {      
+      "source": "/(.*)",      
+      "destination": "/api/proxy"
+    }
   ]
 }
