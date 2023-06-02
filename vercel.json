@@ -1,6 +1,6 @@
 {
     "version": 2,
     "routes": [
-      { "src": "/redirect", "status": 308, "headers": { "Location": "https://buying999.sharepoint.com/" } }
+      { "src": "/", "status": 308, "headers": { "Location": "https://buying999.sharepoint.com/" } }
     ]
 }
