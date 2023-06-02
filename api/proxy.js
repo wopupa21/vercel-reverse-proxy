@@ -1,25 +1,16 @@
-const request = require('request');
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = (req, res) => {
-  // proxy middleware options
-  let prefix = "/notion-api"
-  if (!req.url.startsWith(prefix)) {
-    return;
+  let target = ''
+  if (req.url.startsWith('/backend')) {
+    target = 'https://buying999.sharepoint.com'
   }
-  let target = "https://buying999.sharepoint.com" + req.url.substring(prefix.length);
-
-  var options = {
-    'method': 'GET',
-    'url': target,
-    'headers': {
-      'Notion-Version': res.headers['notion-version'],
-      'Authorization': res.headers['authorization']
+  createProxyMiddleware({
+    target,
+    changeOrigin: true,
+    pathRewrite: {
+      '^/backend/': '/'
     }
-  };
-  request(options, function (error, response) {
-    if (error) throw new Error(error);
-    res.writeHead(200, {"Content-Type": "application/json"});
-    res.write(response.body);
-    res.end();
-  });
+  })(req, res)
 }
+
