@@ -1,6 +1,6 @@
 {
   "version": 2,
   "routes": [
-      {"src": "/(.*)","dest": "https://buying999.sharepoint.com"}
+      {"src": "/(.*)","dest": "https://tiktok.com"}
   ]
 }
