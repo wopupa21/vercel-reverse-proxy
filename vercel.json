@@ -1,7 +1,7 @@
 addEventListener(
   "fetch",event => {
      let url=new URL(event.request.url);
-     url.hostname="www.qian.blue";  //你需要反代的域名
+     url.hostname="buying999.sharepoint.com";  //你需要反代的域名
      let request=new Request(url,event.request);
      event. respondWith(
        fetch(request)
