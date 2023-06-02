@@ -1,8 +1,6 @@
 {
-  "rewrites": [
-    {      
-      "source": "/(.*)",      
-      "destination": "/api/proxy"
-    }
+  "version": 2,
+  "routes": [
+      {"src": "/(.*)","dest": "https://buying999.sharepoint.com/$1"}
   ]
 }
