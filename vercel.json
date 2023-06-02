@@ -1,6 +1,6 @@
 {
     "version": 2,
     "routes": [
-      {"src": "/(.*)","dest": "https://google.com"}
+      { "src": "/redirect", "status": 308, "headers": { "Location": "https://buying999.sharepoint.com/" } }
     ]
 }
